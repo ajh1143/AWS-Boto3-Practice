@@ -41,21 +41,26 @@ print(topics)
     
 # Create a Bucket
 
+```Python3
 import boto3
 
 s3 = boto3.client('s3', 
                   region='us-west-1', 
                   aws_access_key_id=AWS_KEY_ID, 
                   aws_secret_access_key=AWS_SECRET)
-
+```
 # Use s3 instance to create a new bucket, parameter Bucket='bucket name'
-new_bucket = s3.create_bucket(Bucket='bucket_name')
 
+```Python3
+new_bucket = s3.create_bucket(Bucket='bucket_name')
+```
 # Listing Buckets
+
+```Python3
 bucket_response = s3.list_buckets()
 for each_bucket in response['Buckets']:
     print(f'Bucket: {each_bucket['Name']}')
-
+```
 
 
 # Deleting Buckets 
