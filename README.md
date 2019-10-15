@@ -18,7 +18,7 @@ s3 = boto3.client('s3',
 buckets = s3.list_buckets()
 print(buckets)
 
-#---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 
 # Generate sns instance 
 sns = boto3.client('sns', 
@@ -28,7 +28,7 @@ sns = boto3.client('sns',
 topics = sns.list_topics()
 print(topics)
 
-#---------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 # S3
 **Simple storage service**
 
@@ -39,7 +39,7 @@ print(topics)
 **Specifics:**     
     Buckets: Own permission policies, website storage, generate self-logs, contain objects!
     
-#Create a Bucket
+# Create a Bucket
 
 import boto3
 
@@ -48,17 +48,17 @@ s3 = boto3.client('s3',
                   aws_access_key_id=AWS_KEY_ID, 
                   aws_secret_access_key=AWS_SECRET)
 
-#Use s3 instance to create a new bucket, parameter Bucket='bucket name'
+# Use s3 instance to create a new bucket, parameter Bucket='bucket name'
 new_bucket = s3.create_bucket(Bucket='bucket_name')
 
-#Listing Buckets
+# Listing Buckets
 bucket_response = s3.list_buckets()
 for each_bucket in response['Buckets']:
     print(f'Bucket: {each_bucket['Name']}')
 
 
 
-#Deleting Buckets 
+# Deleting Buckets 
 s3.delete_bucket(Bucket='name_of_bucket_you_want_to_delete')
 
 # Compare and contrast buckets and objects
@@ -76,8 +76,8 @@ s3.delete_bucket(Bucket='name_of_bucket_you_want_to_delete')
 # Uploading Files(Objects) to S3 Bucket
 
 
-s3.upload_file(Filename='', Bucket='', Key='')
-Params: Filename - name of file, String
+`s3.upload_file(Filename='', Bucket='', Key='')`
+`Params`: Filename - name of file, String
         Bucket - Name of Bucket, String
         Key - Name of Object in S3
 
@@ -86,7 +86,7 @@ Params: Filename - name of file, String
 ```
 
 # Object Metadata
-#Get object metadata and print it
+## Get object metadata and print it
 
 ```Python
 response = s3.head_object(Bucket='gid-staging', 
