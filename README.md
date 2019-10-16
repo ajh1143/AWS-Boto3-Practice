@@ -10,6 +10,7 @@ Playing around w/ Boto3
 -Cloud directory to hold objects, basically allows us to store files in folders.
 
 # Generate s3 instance
+```Python3
 s3 = boto3.client('s3', 
                   region='us-west-1', 
                   aws_access_key_id=AWS_KEY_ID, 
@@ -17,17 +18,18 @@ s3 = boto3.client('s3',
 
 buckets = s3.list_buckets()
 print(buckets)
-
+```
 ---------------------------------------------------------------------------------------------------------------------------
 
 # Generate sns instance 
+```Python3
 sns = boto3.client('sns', 
                     region='us-west-1', 
                     aws_access_key_id=AWS_KEY_ID, 
                     aws_secret_access_key=AWS_SECRET)
 topics = sns.list_topics()
 print(topics)
-
+```
 --------------------------------------------------------------------------------------------------------------------------
 # S3
 **Simple storage service**
